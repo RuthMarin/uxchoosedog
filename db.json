@@ -2,8 +2,9 @@
   "adopcion": [
     { "id": 1, "id_perro": 1, "texto": "" }
   ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
+  "perfil": [
+    { "id": 1, "nombre": "some comment", "sexo": "", "edad": "",  "estado": "", "foto": "https://placedog.net/500", "vivienda": "", "descripcion": "",}
   ],
-  "profile": { "name": "typicode" }
+  "imagen": [ { "contador": 500 }
+ ],
 }

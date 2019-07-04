@@ -19,11 +19,37 @@
       </div>
       <br>
     </div>
+    <div v-for="elemento in info">
+      {{ elemento.id }}
+    </div>
   </div>
 
 </template>
 
 <script>
+  import Vue from 'vue'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+Vue.use(VueAxios, axios)
+ export default{
+
+   data () {
+       return {
+         info: null
+       }
+     },
+     mounted () {
+       Vue.axios.get('http://localhost:3000/adopcion').then((response) => {
+         console.log(response.data)
+         this.info = response.data;
+       })
+
+
+     }
+
+
+ }
+
 
 
 </script>
