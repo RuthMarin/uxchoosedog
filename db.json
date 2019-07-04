@@ -3,8 +3,8 @@
     { "id": 1, "id_perro": 1, "texto": "" }
   ],
   "perfil": [
-    { "id": 1, "nombre": "some comment", "sexo": "", "edad": "",  "estado": "", "foto": "https://placedog.net/500", "vivienda": "", "descripcion": "",}
+    { "id": 1, "nombre": "some comment", "sexo": "", "edad": "",  "estado": "", "foto": "https://placedog.net/500", "vivienda": "", "descripcion": ""}
   ],
   "imagen": [ { "contador": 500 }
- ],
+ ]
 }
