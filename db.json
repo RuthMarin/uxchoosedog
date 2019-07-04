@@ -3,7 +3,16 @@
     { "id": 1, "id_perro": 1, "texto": "" }
   ],
   "perfil": [
-    { "id": 1, "nombre": "some comment", "sexo": "", "edad": "",  "estado": "", "foto": "https://placedog.net/500", "vivienda": "", "descripcion": ""}
+    { "id": 1, "nombre": "Elemento", "sexo": "", "edad": "",  "estado": "", "foto": "https://placedog.net/500", "vivienda": "", "descripcion": ""},
+    { "id": 2, "nombre": "Adjetivo", "sexo": "", "edad": "",  "estado": "", "foto": "https://placedog.net/500", "vivienda": "", "descripcion": ""},
+    { "id": 3, "nombre": "Calendario", "sexo": "", "edad": "",  "estado": "", "foto": "https://placedog.net/500", "vivienda": "", "descripcion": ""},
+    { "id": 4, "nombre": "Yo no fui", "sexo": "", "edad": "",  "estado": "", "foto": "https://placedog.net/500", "vivienda": "", "descripcion": ""},
+    { "id": 5, "nombre": "Playita", "sexo": "", "edad": "",  "estado": "", "foto": "https://placedog.net/500", "vivienda": "", "descripcion": ""},
+    { "id": 6, "nombre": "Palmerita", "sexo": "", "edad": "",  "estado": "", "foto": "https://placedog.net/500", "vivienda": "", "descripcion": ""},
+    { "id": 7, "nombre": "Jefe", "sexo": "", "edad": "",  "estado": "", "foto": "https://placedog.net/500", "vivienda": "", "descripcion": ""},
+    { "id": 8, "nombre": "Etcetera", "sexo": "", "edad": "",  "estado": "", "foto": "https://placedog.net/500", "vivienda": "", "descripcion": ""},
+    { "id": 9, "nombre": "Mente en blanco", "sexo": "", "edad": "",  "estado": "", "foto": "https://placedog.net/500", "vivienda": "", "descripcion": ""},
+    { "id": 10, "nombre": "Moneda", "sexo": "", "edad": "",  "estado": "", "foto": "https://placedog.net/500", "vivienda": "", "descripcion": ""}
   ],
   "imagen": [ { "contador": 500 }
  ]
