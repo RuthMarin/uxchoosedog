@@ -22,6 +22,32 @@
     <div v-for="elemento in info">
       {{ elemento.id }}
     </div>
+    <div class="row justify-content-center">
+
+    <div class="col-md-8">
+
+        <div class="card">
+
+            <div class="card-header">Vue Axios Post - ItSolutionStuff.com</div>
+
+
+
+            <div class="card-body">
+
+                <form @submit="formSubmit">
+                <strong>Description:</strong>
+                <textarea class="form-control" v-model="texto"></textarea>
+                <br/>
+                <button class="btn btn-success">Enviar</button>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
   </div>
 
 </template>
@@ -31,11 +57,16 @@
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 Vue.use(VueAxios, axios)
+
  export default{
+
 
    data () {
        return {
-         info: null
+         info: null,
+         id_perro: '',
+         texto: '',
+         output: ''
        }
      },
      mounted () {
@@ -43,12 +74,31 @@ Vue.use(VueAxios, axios)
          console.log(response.data)
          this.info = response.data;
        })
+     },
+     methods: {
+
+    formSubmit(e) {
+        e.preventDefault();
+        let currentObj = this;
+        this.axios.post('http://localhost:3000/adopcion', {
+            texto: this.texto,
+            id_perro: this.$route.params.id
+        })
+        .then(function (response) {
+            currentObj.output = response.data;
+        })
+        .catch(function (error) {
+            currentObj.output = error;
+
+        });
+    }
+
+}
+
+}
 
 
-     }
 
-
- }
 
 
 
