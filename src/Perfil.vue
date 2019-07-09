@@ -1,27 +1,69 @@
 <template>
-
   <div class="container-fluid">
-    <h1>Basic Grid Structure</h1>
-    <p>Resize the browser window to see the effect.</p>
-    <p>The first, second and third row will automatically stack on top of each other when the screen is less than 576px wide.</p>
-
+      <img class = "img"src="./assets/portada.png">
     <div class="container-fluid">
       <!-- Control the column width, and how they should appear on different devices -->
       <div class="row">
-        <div class="col-sm-6" style="background-color:#FFF7E9;"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
-        <div class="col-sm-6" style="background-color:#F7F2C2 ;"><form>
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1">Ingresa tu mensaje de presentación</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-    <a href="#"  class="btn btn-primary  get-started-btn mt-1 mb-1">Registrarse</a>
+        <div class="col-sm-6" style="background-color:#FFF7E9;">
+            <div class="w3-container">
+                <br>
+              <img class= "img" :src=info.foto >
+  <h2>{{info.nombre}}</h2>
+  <p>{{info.descripcion}}</p>
+  <table class="table">
+    <tbody>
+      <tr>
+        <th scope="row">Sexo</th>
+        <td>{{info.sexo}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Edad</th>
+        <td>{{info.edad}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Vivienda</th>
+        <td>{{info.vivienda}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+        </div>
+        <div class="col-sm-6" style="background-color:#F7F2C2 ;"><div class="row justify-content-center">
+
+        <div class="col-md-8">
+  <br>
+<h2>¿Cómo adoptar?</h2>
+<ul class="a">
+  <li>Los perros son animales extraordinarios pero tienen una serie de necesidades que no puedes pasar por alto. Los paseos diarios, la rutina de cuidados, así como los tiempos de juego y la socialización con otros perros. Si ya has valorado todos estos aspectos y decides seguir adelante con la adopción.</li>
+  <li>Envian un mensaje para ponerte en contacto con el dueño temporal explicando por qué te gustaría adoptar a este perro</li>
+  <li>En el mensaje deja tu número de teléfono para que se pongan en contacto contigo</li>
+</ul>
+
+            <div class="card">
+
+                <div class="card-body">
+                    <form @submit="formSubmit">
+                    <strong>Escribe tu solicitud:</strong>
+                    <textarea class="form-control" v-model="texto"></textarea>
+                    <br/>
+                    <button class="btn btn-success" >Enviar</button>
+                    </form>
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+    <br>
   </div>
-</form></div>
       </div>
       <br>
     </div>
-    <div v-for="elemento in info">
-      {{ elemento.id }}
-    </div>
+
+<notifications group="mensaje" />
   </div>
 
 </template>
@@ -31,24 +73,54 @@
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 Vue.use(VueAxios, axios)
+
  export default{
+
 
    data () {
        return {
-         info: null
+         info: null,
+         id_perro: '',
+         texto: '',
+         output: ''
        }
      },
      mounted () {
-       Vue.axios.get('http://localhost:3000/adopcion').then((response) => {
+       Vue.axios.get('http://localhost:3000/perfil/'+ this.$route.params.id).then((response) => {
          console.log(response.data)
          this.info = response.data;
        })
+     },
+     methods: {
+
+    formSubmit(e) {
+        e.preventDefault();
+        let currentObj = this;
+        this.axios.post('http://localhost:3000/adopcion', {
+            texto: this.texto,
+            id_perro: this.$route.params.id
+        })
+        .then(function (response) {
+          console.log('AAAAAAA');
+            e.target.reset();
+
+        })
+        .catch(function (error) {
+            currentObj.output = error;
+
+        });
+        this.$notify({
+          group: 'mensaje',
+          text: 'Tu solicitud fue enviada!'
+        });
+    }
+
+}
+
+}
 
 
-     }
 
-
- }
 
 
 
@@ -58,10 +130,17 @@ Vue.use(VueAxios, axios)
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     text-align: center;
-
-
-
   }
+  .img {
+    width: 45%;
+    height: auto;
+    align-items: center;
+  }
+ul.a {list-style-type: circle;
+text-align: justify;}
+.container-fluid{
+  margin-top: 100 px;
+}
 
 
 </style>

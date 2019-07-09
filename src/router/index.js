@@ -4,6 +4,9 @@ import HelloWorld from '@/components/HelloWorld'
 import PerfilPage from  '@/Perfil'
 import Principal from '@/Principal'
 import Adopcion from '@/Adopcion'
+import Admin from '@/Admin'
+
+
 Vue.use(Router)
 
 export default new Router({
@@ -16,6 +19,10 @@ export default new Router({
     {
       path: '/home',
       component: Principal
+    },
+    {
+      path: '/admin',
+      component: Admin
     },
     {
       path: '/adopcion',
