@@ -5,9 +5,11 @@ import App from './App'
 import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import Notifications from 'vue-notification'
 Vue.use(VueAxios, axios)
 
 Vue.config.productionTip = false
+Vue.use(Notifications)
 
 /* eslint-disable no-new */
 new Vue({
