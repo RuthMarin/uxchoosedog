@@ -9,12 +9,14 @@
     <div class="filter-name">
       <label class="checkbox">Departamento
         <input type="checkbox" checked="" v-model="filtres.depa">
+        <!--<input type="checkbox" checked="" @click="change()" :value="values[0]" v-model="tags">-->
         <span class="check"></span>
       </label>
     </div>
     <div class="filter-name">
       <label class="checkbox">Casa
         <input type="checkbox" checked="" v-model="filtres.casa">
+        <!--<input type="checkbox" checked="" :value="values[1]" v-model="tags">-->
         <span class="check"></span>
       </label>
     </div>
@@ -24,12 +26,14 @@
     <div class="filter-name">
       <label class="checkbox">Hembra
         <input type="checkbox" checked="" v-model="filtres.hm">
+        <!--<input type="checkbox" checked="" value="h" v-model="tags">-->
         <span class="check"></span>
       </label>
     </div>
     <div class="filter-name">
       <label class="checkbox">Macho
         <input type="checkbox" checked="" v-model="filtres.mch">
+        <!--<input type="checkbox" checked="" value="m" v-model="tags">-->
         <span class="check"></span>
       </label>
     </div>
@@ -39,36 +43,42 @@
     <div class="filter-name">
       <label class="checkbox">Cachorro: 0 ~ 0.5 años
         <input type="checkbox" checked="" v-model="filtres.cachorro">
+        <!--<input type="checkbox" checked="" value="cch" v-model="tags">-->
         <span class="check"></span>
       </label>
     </div>
     <div class="filter-name">
       <label class="checkbox">Joven: 0.5 ~ 0.75 años
         <input type="checkbox" checked="" v-model="filtres.joven">
+        <!--<input type="checkbox" checked="" value="jv" v-model="tags">-->
         <span class="check"></span>
       </label>
     </div>
     <div class="filter-name">
       <label class="checkbox">Adulto: 0.75 ~ 6.5 años
         <input type="checkbox" checked="" v-model="filtres.adulto">
+        <!--<input type="checkbox" checked="" value="adt" v-model="tags">-->
         <span class="check"></span>
       </label>
     </div>
     <div class="filter-name">
       <label class="checkbox">Maduro: 6.5 ~ 9.75 años
         <input type="checkbox" checked="" v-model="filtres.maduro">
+        <!--<input type="checkbox" checked="" value="md" v-model="tags">-->
         <span class="check"></span>
       </label>
     </div>
     <div class="filter-name">
       <label class="checkbox">Mayor: 9.75 ~ 13 años
         <input type="checkbox" checked="" v-model="filtres.mayor">
+        <!--<input type="checkbox" checked="" value="my" v-model="tags">-->
         <span class="check"></span>
       </label>
     </div>
     <div class="filter-name">
       <label class="checkbox">Geriátrico: más de 13 años
         <input type="checkbox" checked="" v-model="filtres.gtro">
+        <!--<input type="checkbox" checked="" value="gr" v-model="tags">-->
         <span class="check"></span>
       </label>
     </div>
@@ -78,7 +88,10 @@
 <script>
 export default {
   name: 'filtros',
-  props: ['filtres']
+  props: ['filtres'],
+  /*props: {
+    filtres: Array
+  },*/
 }
 </script>
 
