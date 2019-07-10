@@ -101,24 +101,34 @@ Vue.use(VueAxios, axios)
 
     formSubmit(e) {
         e.preventDefault();
-        let currentObj = this;
-        this.axios.post('http://localhost:3000/adopcion', {
-            texto: this.texto,
-            id_perro: this.$route.params.id
-        })
-        .then(function (response) {
-          console.log('AAAAAAA');
-            e.target.reset();
+        if(this.texto !=""){
+          let currentObj = this;
+          this.axios.post('http://localhost:3000/adopcion', {
+              texto: this.texto,
+              id_perro: this.$route.params.id,
+              respuesta: true
+          })
+          .then(function (response) {
+            console.log('AAAAAAA');
+              e.target.reset();
 
-        })
-        .catch(function (error) {
-            currentObj.output = error;
+          })
+          .catch(function (error) {
+              currentObj.output = error;
 
-        });
-        this.$notify({
-          group: 'mensaje',
-          text: 'Tu solicitud fue enviada!'
-        });
+          });
+          this.$notify({
+            group: 'mensaje',
+            text: 'Tu solicitud fue enviada!'
+          });
+        }
+        else {
+          this.$notify({
+            group: 'mensaje',
+            text: 'Debes llenar el campo'
+          });
+        }
+
     }
 
 }

@@ -58,16 +58,16 @@
   </div>
 <br>
 <div class="row">
-  <h5> Perfiles de perros</h5>
-    <div class="col" style="background-color:red;" v-for="it in adoptado">
-      <div class="col" style="background-color:#F7F2C2;" >{{it.nombre}}
-        <button class="btn btn-success" v-model="statementIsFalse" @click="postPost(it.id)">Adoptado</button>
-</div>
+    <div class="col" style="background-color:red;" v-for="it in adoptado"><br><img class= "img3" :src=it.foto >
+      <div class="col" style="background-color:#F7F2C2; text-align: center;" >{{it.nombre}} <br>
+        <button class="btn btn-success" v-model="statementIsFalse" @click="postPost(it.id)">Adoptado</button><br>
+</div><br>
 
     </div>
 
   </div>
  <div>State: <strong>{{ datos }}</strong></div>
+ 
   </div>
 
 
@@ -200,6 +200,14 @@
   margin-left: auto;
   margin-right: auto;
     width: 15%;
+    height: auto;
+    align-items: center;
+  }
+  .img3 {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+    width: 30%;
     height: auto;
     align-items: center;
   }

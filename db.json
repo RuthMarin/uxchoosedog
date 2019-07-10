@@ -16,13 +16,47 @@
       "texto": "qhuekgdksgLJGDLQGLSJgdl",
       "id_perro": "1",
       "id": 3,
-      "respuesta": true
+      "respuesta": false
     },
     {
       "texto": "ASGHAFDJASj AFSH",
       "id_perro": "2",
       "id": 4,
       "respuesta": false
+    },
+    {
+      "texto": "sjkkhXKJah",
+      "id_perro": "1",
+      "id": 5
+    },
+    {
+      "texto": "aDaSAASdaSDAASdA",
+      "id_perro": "1",
+      "id": 6,
+      "respuesta": false
+    },
+    {
+      "texto": "ADSAAsaA",
+      "id_perro": 6,
+      "id": 7
+    },
+    {
+      "texto": "322423423",
+      "id_perro": "1",
+      "respuesta": true,
+      "id": 8
+    },
+    {
+      "texto": "",
+      "id_perro": "1",
+      "respuesta": true,
+      "id": 9
+    },
+    {
+      "texto": "asdasd",
+      "id_perro": "1",
+      "respuesta": false,
+      "id": 10
     }
   ],
   "perfil": [
@@ -31,7 +65,7 @@
       "nombre": "Elemento",
       "sexo": "macho",
       "edad": "cachorro",
-      "estado": true,
+      "estado": false,
       "foto": "https://placedog.net/500/280/503",
       "vivienda": "casa",
       "descripcion": "hgfhgfghf",
@@ -46,7 +80,7 @@
       "nombre": "Adjetivo",
       "sexo": "macho",
       "edad": "joven",
-      "estado": true,
+      "estado": false,
       "foto": "https://placedog.net/501/280/503",
       "vivienda": "depa",
       "descripcion": "",
@@ -91,7 +125,7 @@
       "nombre": "Playita",
       "sexo": "hembra",
       "edad": "mayor",
-      "estado": false,
+      "estado": true,
       "foto": "https://placedog.net/504/280/503",
       "vivienda": "todo",
       "descripcion": "",
