@@ -5,57 +5,67 @@
     </div>
     <div class="row"  >
       <div class="col-xs-6 col-md-4" style="background-color:#AA3939;margin-top: 20px; margin-bottom: 20px; align-items:center">
-        <div class="card"  v-for="item in info" style="width: 100%;margin-top: 10 px; ">
+        <div class="card"  v-for="item in solicitudes" style="width: 100%;margin-top: 10 px; ">
           <div class="card-body">
             <h5 class="card-title">Solicitud de adopción</h5>
             <p class="card-text">{{ item.texto }}</p>
-            <button class="btn btn-success" v-model="statementIsFalse" @click="postPost(item.id_perro)">Cambiar </button>
+            <button class="btn btn-success" @click="postRespuesta(item.id)">Aceptar</button>
           </div>
         </div>
       </div>
       <div class="col-xs-12 col-md-8" style="background-color:#F7F2C2 ; margin-top: 20px; margin-bottom: 20px; " >
         <h3>Formulario para dar en adopción</h3><img class= "imgk" src="./assets/perro.png">
         <div>
-          <div class="form-group">
-            <label>Nombre:</label>
-            <input class="form-control" id="email" v-model="perfil_perro.nombre">
+          <div>
+            <div class="form-group">
+              <label>Nombre:</label>
+              <input class="form-control" id="email" v-model="perfil_perro.nombre">
+            </div>
+            <div class="form-group">
+              <label >Descripción:</label>
+              <input  class="form-control" id="email" v-model="perfil_perro.descripcion">
+            </div>
+            <div class="form-group">
+              <label >Tipo de Vivienda:</label>
+              <select name="vivienda" id="vivienda" v-model="perfil_perro.vivienda">
+                <option>Casa</option>
+                <option>Departamento</option>
+                <option>Casa y departamento</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label >Sexo:</label>
+              <select name="sexo" id="sexo" v-model="perfil_perro.sexo">
+                <option>Macho</option>
+                <option>Hembra</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label >Edad:</label>
+              <select name="edad" id="edad" v-model="perfil_perro.edad">
+                <option value="0">Cachorro: 0 ~ 0.5 años</option>
+                <option value="1">Joven: 0.5 ~ 0.75 años</option>
+                <option value="2">Adulto: 0.75 ~ 6.5 años</option>
+                <option value="3">Maduro: 6.5 ~ 9.75 años</option>
+                <option value="4">Mayor: 9.75 ~ 13 años</option>
+                <option value="5">Geriatrico: mas de 13 años</option>
+              </select>
+            </div>
+            <button class="btn btn-success" @click="nuevoPerro()">Agregar</button>
           </div>
-          <div class="form-group">
-            <label >Descripción:</label>
-            <input  class="form-control" id="email" v-model="perfil_perro.descripcion">
-          </div>
-          <div class="form-group">
-            <label >Tipo de Vivienda:</label>
-            <select name="vivienda" id="vivienda" v-model="perfil_perro.vivienda">
-              <option>Casa</option>
-              <option>Departamento</option>
-              <option>Casa y departamento</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label >Sexo:</label>
-            <select name="sexo" id="sexo" v-model="perfil_perro.sexo">
-              <option>Macho</option>
-              <option>Hembra</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label >Edad:</label>
-            <select name="edad" id="edad" v-model="perfil_perro.edad">
-              <option value="0">Cachorro: 0 ~ 0.5 años</option>
-              <option value="1">Joven: 0.5 ~ 0.75 años</option>
-              <option value="2">Adulto: 0.75 ~ 6.5 años</option>
-              <option value="3">Maduro: 6.5 ~ 9.75 años</option>
-              <option value="4">Mayor: 9.75 ~ 13 años</option>
-              <option value="5">Geriatrico: mas de 13 años</option>
-            </select>
-          </div>
-          <button class="btn btn-success" @click="nuevoPerro()">Agregar</button>
         </div>
       </div>
     </div>
     <br>
+    <div class="row">
+      <div class="col" style="background-color:red;" v-for="it in adoptado"><br><img class= "img3" :src=it.foto >
+        <div class="col" style="background-color:#F7F2C2; text-align: center;" >{{it.nombre}} <br>
+          <button class="btn btn-success" v-model="statementIsFalse" @click="postPost(it.id)">Adoptado</button><br>
+      </div>
+      <br>
+    </div>
   </div>
+  <div>State: <strong>{{ datos }}</strong></div></div>
 </template>
 
 <script>
@@ -63,13 +73,18 @@ import Vue from 'vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 Vue.use(VueAxios, axios)
-
 export default{
   data () {
     return {
-      info: null,
+      info: [],
       status: '',
       statementIsFalse: false,
+      datos: '',
+      numero: '',
+      solicitud:'',
+      aprobado:'',
+      id: '',
+      perro:[],
       perfil_perro: {
         errores: [],
         nombre: null,
@@ -78,7 +93,6 @@ export default{
         sexo: null,
         edad: null,
       },
-      numero: ''
     }
   },
   created () {
@@ -86,18 +100,21 @@ export default{
       console.log(response.data)
       this.info = response.data;
     })
+    Vue.axios.get('http://localhost:3000/perfil/').then((response) => {
+      console.log(response.data)
+      this.perro = response.data;
+    })
   },
   computed: {
     solicitudes: function(){
-      console.log(this.datos)
-      var solicitudes=[];
-      this.info.forEach(function(inf){
-        
+      return this.info.filter(function(s){
+        return s.respuesta
       })
-      if(this.info.estado === false){
-        return this.id;
-
-      }
+    },
+    adoptado: function(){
+      return this.perro.filter(function(x){
+        return x.estado
+      })
     }
   },
   methods: {
@@ -106,25 +123,34 @@ export default{
       Vue.axios.get('http://localhost:3000/perfil/'+this.numero).then((response) => {
         console.log(response.data)
         this.datos = response.data;
-        this.datos.estado = !this.datos.estado;
+        this.datos.estado = false;
         axios.put('http://localhost:3000/perfil/'+this.numero, this.datos)
-        .then(response => {
-
-        }).catch(e => {
-          this.errors.push(e)
-        })
+      .then(response => {
+      })
+      .catch(e => {
+        this.errors.push(e)
+      })
+      axios.get('http://localhost:3000/perfil/').then((response)=>{
+        this.perro = response.data;
+      })
       })
     },
-    comprobarDatos(e){
-      if(this.perfil_perro.nombre && this.perfil_perro.descripcion) return true;
-      this.errores = []
-      if(!this.perfil_perro.nombre){
-        this.errores.push('El nombre es requerido')
-      }
-      if(!this.perfil_perro.descripcion){
-        this.errores.push('La descripcion es requerida')
-      }
-      e.preventDefault()
+    postRespuesta(elemento) {
+      this.solicitud = elemento;
+      Vue.axios.get('http://localhost:3000/adopcion/'+this.solicitud).then((response) => {
+        console.log(response.data)
+        this.aprobado = response.data;
+        this.aprobado.respuesta = false;
+        axios.put('http://localhost:3000/adopcion/'+this.solicitud, this.aprobado)
+        axios.get('http://localhost:3000/adopcion/').then((response)=>{
+          this.info = response.data;
+        })
+      .then(response => {
+      })
+      .catch(e => {
+        this.errors.push(e)
+      })
+      })
     },
     nuevoPerro(){
       var numero_imagen
@@ -198,6 +224,7 @@ export default{
     }
   }
 }
+
 </script>
 
 <style type="text/css">
@@ -236,6 +263,14 @@ export default{
   margin-left: auto;
   margin-right: auto;
     width: 15%;
+    height: auto;
+    align-items: center;
+  }
+  .img3 {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+    width: 30%;
     height: auto;
     align-items: center;
   }

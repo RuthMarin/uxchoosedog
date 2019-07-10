@@ -5,28 +5,35 @@
       <!-- Control the column width, and how they should appear on different devices -->
       <div class="row">
         <div class="col-sm-6" style="background-color:#FFF7E9;">
-          <div class="w3-container">
-            <br>
-            <img class= "img" :src=info.foto >
-            <h2>{{info.nombre}}</h2>
-            <p>{{info.descripcion}}</p>
-            <table class="table">
-              <tbody>
-                <tr>
-                  <th scope="row">Sexo</th>
-                  <td>{{info.sexo}}</td>
-                </tr>
-                <tr>
-                  <th scope="row">Edad</th>
-                  <td>{{info.edad}}</td>
-                </tr>
-                <tr>
-                  <th scope="row">Vivienda</th>
-                  <td>{{info.vivienda}}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+            <div class="w3-container">
+                <br>
+              <img class= "img" :src=info.foto >
+  <h2>{{info.nombre}}</h2>
+  <p>{{info.descripcion}}</p>
+  <table class="table">
+    <tbody>
+      <tr>
+        <th scope="row">Sexo</th>
+        <td>{{info.sexo}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Edad</th>
+        <td>{{info.edad}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Vivienda</th>
+        <td>{{info.vivienda}}</td>
+      </tr>
+      <tr>
+        <th scope="row" >Adoptado</th>
+        <td v-if="info.estado === true">Disponible</td>
+        <td v-else> No disponible</td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+
         </div>
         <div class="col-sm-6" style="background-color:#F7F2C2 ;">
           <div class="row justify-content-center">
@@ -81,23 +88,35 @@ export default{
   },
   methods: {
     formSubmit(e) {
-      e.preventDefault();
-      let currentObj = this;
-      this.axios.post('http://localhost:3000/adopcion', {
-        texto: this.texto,
-        id_perro: this.$route.params.id
-      })
-      .then(function (response) {
-        console.log('AAAAAAA');
-        e.target.reset();
-      })
-      .catch(function (error) {
-        currentObj.output = error;
-      });
-      this.$notify({
-        group: 'mensaje',
-        text: 'Tu solicitud fue enviada!'
-      });
+        e.preventDefault();
+        if(this.texto !=""){
+          let currentObj = this;
+          this.axios.post('http://localhost:3000/adopcion', {
+              texto: this.texto,
+              id_perro: this.$route.params.id,
+              respuesta: true
+          })
+          .then(function (response) {
+            console.log('AAAAAAA');
+              e.target.reset();
+
+          })
+          .catch(function (error) {
+              currentObj.output = error;
+
+          });
+          this.$notify({
+            group: 'mensaje',
+            text: 'Tu solicitud fue enviada!'
+          });
+        }
+        else {
+          this.$notify({
+            group: 'mensaje',
+            text: 'Debes llenar el campo'
+          });
+        }
+
     }
   }
 }
