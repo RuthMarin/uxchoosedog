@@ -67,7 +67,6 @@
 
   </div>
  <div>State: <strong>{{ datos }}</strong></div>
- 
   </div>
 
 
