@@ -17,7 +17,7 @@ export default new Router({
       component: PerfilPage
     },
     {
-      path: '/home',
+      path: '/',
       component: Principal
     },
     {

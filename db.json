@@ -42,7 +42,7 @@
       "nombre": "Adjetivo",
       "sexo": "macho",
       "edad": "joven",
-      "estado": false,
+      "estado": true,
       "foto": "https://placedog.net/501/280/503",
       "vivienda": "depa",
       "descripcion": "",
@@ -186,11 +186,85 @@
         "adt",
         "c"
       ]
+    },
+    {
+      "nombre": "Neumatex",
+      "descripcion": "perro choro",
+      "sexo": "Macho",
+      "edad": "joven",
+      "id": 11
+    },
+    {
+      "nombre": "Calcetin",
+      "descripcion": "Perro cochino",
+      "sexo": "Hembra",
+      "edad": "mayor",
+      "tags": [
+        "h",
+        "d",
+        "my"
+      ],
+      "id": 12
+    },
+    {
+      "nombre": "Bolt",
+      "descripcion": "rapido",
+      "sexo": "Hembra",
+      "edad": "adulto",
+      "tags": [
+        "h",
+        "c",
+        "d",
+        "adt"
+      ],
+      "foto": "https://placedog.net/500/280/503",
+      "id": 13
+    },
+    {
+      "nombre": "Jefe",
+      "descripcion": "jefazo",
+      "sexo": "Hembra",
+      "edad": "mayor",
+      "tags": [
+        "h",
+        "d",
+        "my"
+      ],
+      "foto": "https://placedog.net/500/280/503",
+      "id": 14
+    },
+    {
+      "nombre": "Coliforme",
+      "descripcion": "limpio",
+      "sexo": "Macho",
+      "edad": "mayor",
+      "tags": [
+        "m",
+        "c",
+        "d",
+        "my"
+      ],
+      "foto": "https://placedog.net/500/280/503",
+      "id": 15
+    },
+    {
+      "nombre": "blaky",
+      "descripcion": "diinf",
+      "sexo": "Macho",
+      "edad": "mayor",
+      "tags": [
+        "m",
+        "c",
+        "my"
+      ],
+      "foto": "https://placedog.net/500/280/503",
+      "id": 16
     }
   ],
   "imagen": [
     {
-      "contador": 500
+      "contador": 501,
+      "id": 1
     }
   ]
 }
