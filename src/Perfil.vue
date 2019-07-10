@@ -24,6 +24,12 @@
         <th scope="row">Vivienda</th>
         <td>{{info.vivienda}}</td>
       </tr>
+      <tr>
+        <th scope="row" >Adoptado</th>
+        <td v-if="info.estado === true">Disponible</td>
+        <td v-else> No disponible</td>
+
+      </tr>
     </tbody>
   </table>
 </div>

@@ -3,22 +3,26 @@
     {
       "id": 1,
       "id_perro": 2,
-      "texto": "fjffhjhfj"
+      "texto": "fjffhjhfj",
+      "respuesta": false
     },
     {
       "texto": "quiero adoptar un perro",
       "id_perro": "1",
-      "id": 2
+      "id": 2,
+      "respuesta": false
     },
     {
       "texto": "qhuekgdksgLJGDLQGLSJgdl",
       "id_perro": "1",
-      "id": 3
+      "id": 3,
+      "respuesta": true
     },
     {
       "texto": "ASGHAFDJASj AFSH",
       "id_perro": "2",
-      "id": 4
+      "id": 4,
+      "respuesta": false
     }
   ],
   "perfil": [
@@ -27,7 +31,7 @@
       "nombre": "Elemento",
       "sexo": "macho",
       "edad": "cachorro",
-      "estado": false,
+      "estado": true,
       "foto": "https://placedog.net/500/280/503",
       "vivienda": "casa",
       "descripcion": "hgfhgfghf",
@@ -42,7 +46,7 @@
       "nombre": "Adjetivo",
       "sexo": "macho",
       "edad": "joven",
-      "estado": false,
+      "estado": true,
       "foto": "https://placedog.net/501/280/503",
       "vivienda": "depa",
       "descripcion": "",
@@ -87,7 +91,7 @@
       "nombre": "Playita",
       "sexo": "hembra",
       "edad": "mayor",
-      "estado": true,
+      "estado": false,
       "foto": "https://placedog.net/504/280/503",
       "vivienda": "todo",
       "descripcion": "",
@@ -102,7 +106,7 @@
       "nombre": "Palmerita",
       "sexo": "macho",
       "edad": "geri",
-      "estado": false,
+      "estado": true,
       "foto": "https://placedog.net/505/280/503",
       "vivienda": "casa",
       "descripcion": "",
@@ -162,7 +166,7 @@
       "nombre": "Moneda",
       "sexo": "hembra",
       "edad": "cachorro",
-      "estado": true,
+      "estado": false,
       "foto": "https://placedog.net/509/280/503",
       "vivienda": "casa",
       "descripcion": "",
