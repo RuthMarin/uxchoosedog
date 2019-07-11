@@ -10,7 +10,7 @@
         <img class="img" src="./assets/dog2.png">
         <h2 style = "	font-size: 20px;  ">
           <a class="btn btn-large btn-green" href="#/adopcion">ADOPTA</a>
-          <a class="btn btn-large btn-blue" href="#">DAR EN ADOPCIÓN</a>
+          <a class="btn btn-large btn-blue" href="#/admin">DAR EN ADOPCIÓN</a>
         </h2>
         <p>Somos un grupo de voluntarios que rescatamos animales en total abandono o maltrato, los rehabilitamos, los esterilizamos , sanamos y volvemos a pegar sus corazones rotos, por tanta maldad, y les buscamos las mejores familias para ellos.
             Somos un Fundación sin fines de lucro, nuestro fuerza nos la dan ellos al verlos con una familia de verdad.</p>

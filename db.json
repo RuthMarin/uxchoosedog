@@ -4,25 +4,25 @@
       "id": 1,
       "id_perro": 2,
       "texto": "fjffhjhfj",
-      "respuesta": false
+      "respuesta": true
     },
     {
       "texto": "quiero adoptar un perro",
       "id_perro": "1",
       "id": 2,
-      "respuesta": false
+      "respuesta": true
     },
     {
       "texto": "qhuekgdksgLJGDLQGLSJgdl",
       "id_perro": "1",
       "id": 3,
-      "respuesta": false
+      "respuesta": true
     },
     {
       "texto": "ASGHAFDJASj AFSH",
       "id_perro": "2",
       "id": 4,
-      "respuesta": false
+      "respuesta": true
     },
     {
       "texto": "sjkkhXKJah",
@@ -32,7 +32,37 @@
     {
       "texto": "aDaSAASdaSDAASdA",
       "id_perro": "1",
-      "id": 6
+      "id": 6,
+      "respuesta": false
+    },
+    {
+      "texto": "ADSAAsaA",
+      "id_perro": 6,
+      "id": 7
+    },
+    {
+      "texto": "322423423",
+      "id_perro": "1",
+      "respuesta": true,
+      "id": 8
+    },
+    {
+      "texto": "",
+      "id_perro": "1",
+      "respuesta": false,
+      "id": 9
+    },
+    {
+      "texto": "asdasd",
+      "id_perro": "1",
+      "respuesta": false,
+      "id": 10
+    },
+    {
+      "texto": "vfjfhjffjfjfjhfj",
+      "id_perro": "2",
+      "respuesta": false,
+      "id": 11
     }
   ],
   "perfil": [
@@ -41,7 +71,7 @@
       "nombre": "Elemento",
       "sexo": "macho",
       "edad": "cachorro",
-      "estado": false,
+      "estado": true,
       "foto": "https://placedog.net/500/280/503",
       "vivienda": "casa",
       "descripcion": "hgfhgfghf",
@@ -131,7 +161,7 @@
       "nombre": "Jefe",
       "sexo": "hembra",
       "edad": "mayor",
-      "estado": true,
+      "estado": false,
       "foto": "https://placedog.net/506/280/503",
       "vivienda": "todo",
       "descripcion": "",
@@ -161,7 +191,7 @@
       "nombre": "Mente en blanco",
       "sexo": "macho",
       "edad": "cachorro",
-      "estado": false,
+      "estado": true,
       "foto": "https://placedog.net/508/280/503",
       "vivienda": "depa",
       "descripcion": "",
@@ -176,7 +206,7 @@
       "nombre": "Moneda",
       "sexo": "hembra",
       "edad": "cachorro",
-      "estado": false,
+      "estado": true,
       "foto": "https://placedog.net/509/280/503",
       "vivienda": "casa",
       "descripcion": "",
@@ -191,7 +221,7 @@
       "nombre": "Calcetin",
       "sexo": "hembra",
       "edad": "adulto",
-      "estado": false,
+      "estado": true,
       "foto": "https://placedog.net/510/280/503",
       "vivienda": "casa",
       "descripcion": "",
@@ -200,11 +230,259 @@
         "adt",
         "c"
       ]
+    },
+    {
+      "nombre": "Neumatex",
+      "descripcion": "perro choro",
+      "sexo": "Macho",
+      "edad": "joven",
+      "id": 11
+    },
+    {
+      "nombre": "Calcetin",
+      "descripcion": "Perro cochino",
+      "sexo": "Hembra",
+      "edad": "mayor",
+      "tags": [
+        "h",
+        "d",
+        "my"
+      ],
+      "id": 12
+    },
+    {
+      "nombre": "Bolt",
+      "descripcion": "rapido",
+      "sexo": "Hembra",
+      "edad": "adulto",
+      "tags": [
+        "h",
+        "c",
+        "d",
+        "adt"
+      ],
+      "foto": "https://placedog.net/500/280/503",
+      "id": 13
+    },
+    {
+      "nombre": "Jefe",
+      "descripcion": "jefazo",
+      "sexo": "Hembra",
+      "edad": "mayor",
+      "tags": [
+        "h",
+        "d",
+        "my"
+      ],
+      "foto": "https://placedog.net/500/280/503",
+      "id": 14
+    },
+    {
+      "nombre": "Coliforme",
+      "descripcion": "limpio",
+      "sexo": "Macho",
+      "edad": "mayor",
+      "tags": [
+        "m",
+        "c",
+        "d",
+        "my"
+      ],
+      "foto": "https://placedog.net/500/280/503",
+      "id": 15
+    },
+    {
+      "nombre": "blaky",
+      "descripcion": "diinf",
+      "sexo": "Macho",
+      "edad": "mayor",
+      "tags": [
+        "m",
+        "c",
+        "my"
+      ],
+      "foto": "https://placedog.net/500/280/503",
+      "id": 16
+    },
+    {
+      "nombre": "choro",
+      "descripcion": "asldkjnas",
+      "vivienda": "Casa",
+      "sexo": "Hembra",
+      "edad": "adulto",
+      "tags": [
+        "h",
+        "c",
+        "adt"
+      ],
+      "foto": "https://placedog.net/501/280/503",
+      "id": 17
+    },
+    {
+      "nombre": "perrito",
+      "descripcion": "hola",
+      "vivienda": "Casa",
+      "sexo": "Hembra",
+      "edad": "mayor",
+      "tags": [
+        "h",
+        "c",
+        "my"
+      ],
+      "foto": "https://placedog.net/502/280/503",
+      "id": 18
+    },
+    {
+      "nombre": "Perro",
+      "descripcion": "perrrito",
+      "vivienda": "Casa y departamento",
+      "sexo": "Macho",
+      "edad": "maduro",
+      "tags": [
+        "m",
+        "c",
+        "d",
+        "md"
+      ],
+      "estado": false,
+      "foto": "https://placedog.net/503/280/503",
+      "id": 19
+    },
+    {
+      "nombre": null,
+      "descripcion": null,
+      "vivienda": null,
+      "sexo": null,
+      "tags": [
+        "c",
+        "d"
+      ],
+      "estado": false,
+      "foto": "https://placedog.net/504/280/503",
+      "id": 20
+    },
+    {
+      "nombre": null,
+      "descripcion": null,
+      "vivienda": null,
+      "sexo": null,
+      "tags": [
+        "c",
+        "d"
+      ],
+      "estado": false,
+      "foto": "https://placedog.net/505/280/503",
+      "id": 21
+    },
+    {
+      "nombre": null,
+      "descripcion": null,
+      "vivienda": null,
+      "sexo": null,
+      "tags": [
+        "c",
+        "d"
+      ],
+      "estado": false,
+      "foto": "https://placedog.net/506/280/503",
+      "id": 22
+    },
+    {
+      "nombre": null,
+      "descripcion": null,
+      "vivienda": null,
+      "sexo": null,
+      "tags": [
+        "c",
+        "d"
+      ],
+      "estado": false,
+      "foto": "https://placedog.net/507/280/503",
+      "id": 23
+    },
+    {
+      "nombre": null,
+      "descripcion": null,
+      "vivienda": null,
+      "sexo": null,
+      "tags": [
+        "c",
+        "d"
+      ],
+      "estado": false,
+      "foto": "https://placedog.net/508/280/503",
+      "id": 24
+    },
+    {
+      "nombre": null,
+      "descripcion": null,
+      "vivienda": null,
+      "sexo": null,
+      "tags": [
+        "c",
+        "d"
+      ],
+      "estado": true,
+      "foto": "https://placedog.net/509/280/503",
+      "id": 25
+    },
+    {
+      "nombre": null,
+      "descripcion": null,
+      "vivienda": null,
+      "sexo": null,
+      "tags": [
+        "c",
+        "d"
+      ],
+      "estado": true,
+      "foto": "https://placedog.net/510/280/503",
+      "id": 26
+    },
+    {
+      "nombre": null,
+      "descripcion": null,
+      "vivienda": null,
+      "sexo": null,
+      "tags": [
+        "c",
+        "d"
+      ],
+      "estado": true,
+      "foto": "https://placedog.net/511/280/503",
+      "id": 27
+    },
+    {
+      "nombre": null,
+      "descripcion": null,
+      "vivienda": null,
+      "sexo": null,
+      "tags": [
+        "c",
+        "d"
+      ],
+      "estado": false,
+      "foto": "https://placedog.net/512/280/503",
+      "id": 28
+    },
+    {
+      "nombre": null,
+      "descripcion": null,
+      "vivienda": null,
+      "sexo": null,
+      "tags": [
+        "c",
+        "d"
+      ],
+      "estado": false,
+      "foto": "https://placedog.net/513/280/503",
+      "id": 29
     }
   ],
   "imagen": [
     {
-      "contador": 500
+      "contador": 514,
+      "id": 1
     }
   ]
 }
