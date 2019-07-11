@@ -10,8 +10,8 @@
     </div>
     <div class="col-sm-8">
       <div class="row">
-        <div class="col-md-8">
-          <label v-if="filtrarDogs.length === 0" style="margin-top: 20px" class="name" id="dog-name">No hay coincidencias para tu busqueda :(</label>
+        <div v-if="filtrarDogs.length === 0" class="col-md-8">
+          <label  style="margin-top: 20px" class="name" id="dog-name">No hay coincidencias para tu busqueda :(</label>
         </div>
         <div class="col-md-4" v-for="(perro, index) in filtrarDogs" :key="index">
           <div id="dog-container">

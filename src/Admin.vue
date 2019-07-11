@@ -12,10 +12,13 @@
         <br>
         <img class= "img3" :src="it.foto" >
           <div class="col-sm-6" style="background-color:#FFC592; text-align: center; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;" >
-            {{it.nombre}}
+            <label>{{it.nombre}}</label>
             <br>
-            <button type="button" class="btn btn-primary"  style="background-color:#EE7A17; " @click="postPost(it.id)">
+            <button type="button" class="btn btn-success " @click="postPost(it.id)">
               Adoptado
+            </button>
+            <button type="button" class="btn btn-primary"  style="background-color:#EE7A17; maring-top: 10px" @click="getSolicitudes(it.id)">
+              Solicitudes
             </button>
             <br>
           </div>
@@ -29,7 +32,7 @@
           <div class="card-body">
             <h5 class="card-title">Solicitud de adopción</h5>
             <p class="card-text">{{ item.texto }}</p>
-            <button class="btn btn-success" @click="postRespuesta(item.id)">Aceptar</button>
+            <button class="btn btn-danger" @click="postRespuesta(item.id)">Eliminar</button>
           </div>
         </div>
       </div>
@@ -90,6 +93,7 @@
 import Vue from 'vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+
 Vue.use(VueAxios, axios)
 export default{
   data () {
@@ -102,8 +106,9 @@ export default{
       solicitud:'',
       aprobado:'',
       id: '',
+      idp: '',
       perro:[],
-      perros_solicitudes: [],
+      solicitudes: [],
       perfil_perro: {
         errores: {
           name: null,
@@ -128,8 +133,8 @@ export default{
     Vue.axios.get('http://localhost:3000/perfil/').then((respperf) => {
       console.log(respperf.data)
       this.perro = respperf.data;
-      this.perros_solicitudes = this.joinPerfilSolicitud(this.info,this.perro)
-      console.log(this.perros_solicitudes)
+      //this.perros_solicitudes = this.joinPerfilSolicitud(this.info,this.perro)
+      //console.log(this.perros_solicitudes)
     })
   },
   computed: {
@@ -145,6 +150,25 @@ export default{
     }
   },
   methods: {
+    filtrarSolicitudes(){
+      var a = this.info.filter(function(s){
+        return s.respuesta
+      })
+      this.solicitudes = a
+      console.log(this.solicitudes)
+    },
+    getSolicitudes(id){
+      console.log(id)
+      console.log(this.info)
+      var solicitudes = []
+      this.info.forEach(function(inf){
+        if(inf.id_perro === id){
+          solicitudes.push(inf)
+        }
+      })
+      this.solicitudes = solicitudes
+      console.log(solicitudes)
+    },
     check(){
       if(this.perfil_perro.nombre && this.perfil_perro.descripcion && this.perfil_perro.vivienda && this.perfil_perro.sexo && this.perfil_perro.edad){
         return true
@@ -189,6 +213,24 @@ export default{
       })
     },
     postRespuesta(elemento) {
+      Vue.axios.delete('http://localhost:3000/adopcion/'+elemento).then((response) => {
+        Vue.axios.get('http://localhost:3000/adopcion/').then((respadop) => {
+          console.log(respadop.data)
+          this.info = respadop.data;
+          //this.$router.push({ name: 'admin'})
+          this.getSolicitudes(elemento)
+          this.$notify({
+            group: 'mensaje',
+            text: 'Solicitud eliminada'
+          });
+        })
+        .then(response => {
+        })
+        .catch(e => {
+          this.errors.push(e)
+        })
+      })
+      /*
       this.solicitud = elemento;
       Vue.axios.get('http://localhost:3000/adopcion/'+this.solicitud).then((response) => {
         console.log(response.data)
@@ -203,7 +245,7 @@ export default{
       .catch(e => {
         this.errors.push(e)
       })
-      })
+      })*/
     },
     nuevoPerro(){
       if(this.check()){

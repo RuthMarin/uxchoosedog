@@ -11,6 +11,18 @@
       "id_perro": 3,
       "respuesta": false,
       "id": 2
+    },
+    {
+      "texto": "skjbdsa",
+      "id_perro": 5,
+      "respuesta": true,
+      "id": 4
+    },
+    {
+      "texto": "asdasd",
+      "id_perro": 5,
+      "respuesta": true,
+      "id": 5
     }
   ],
   "perfil": [
@@ -70,14 +82,59 @@
         "t",
         "adt"
       ],
-      "estado": true,
+      "estado": false,
       "foto": "https://placedog.net/503/280/503",
       "id": 4
+    },
+    {
+      "nombre": "asokd",
+      "descripcion": "dasdasd",
+      "vivienda": "Casa",
+      "sexo": "Macho",
+      "edad": "maduro",
+      "tags": [
+        "m",
+        "c",
+        "md"
+      ],
+      "estado": false,
+      "foto": "https://placedog.net/505/280/503",
+      "id": 5
+    },
+    {
+      "nombre": "rtrrt",
+      "descripcion": "etert",
+      "vivienda": "Departamento",
+      "sexo": "Hembra",
+      "edad": "adulto",
+      "tags": [
+        "h",
+        "d",
+        "adt"
+      ],
+      "estado": false,
+      "foto": "https://placedog.net/506/280/503",
+      "id": 6
+    },
+    {
+      "nombre": "dsfsdf",
+      "descripcion": "sfsdfsd",
+      "vivienda": "Departamento",
+      "sexo": "Hembra",
+      "edad": "mayor",
+      "tags": [
+        "h",
+        "d",
+        "my"
+      ],
+      "estado": false,
+      "foto": "https://placedog.net/507/280/503",
+      "id": 7
     }
   ],
   "imagen": [
     {
-      "contador": 505,
+      "contador": 508,
       "id": 1
     }
   ]
