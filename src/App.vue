@@ -11,6 +11,8 @@
 </script>
 
 <style type="text/css">
-
+#app{
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+}
 
 </style>

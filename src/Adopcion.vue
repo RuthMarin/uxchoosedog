@@ -1,15 +1,11 @@
 <template>
   <body class="row adopcion-container">
-    <!--<div class="header">
-      <h1>{{ title }}</h1>
-    </div> -->
     <div class="doc">
       <div class="box">
         <img src="./assets/portada.png">
       </div>
     </div>
     <div class="col-sm-4">
-      <!--<filtros :tags.sync="tags" :values.sync="values"></filtros>-->
       <filtros v-bind:filtres="filtros"></filtros>
     </div>
     <div class="col-sm-8">
@@ -21,15 +17,10 @@
               <label class="dog-filtro">{{ perro.vivienda }}</label>
               <label class="dog-filtro">{{ perro.sexo }}</label>
               <label class="dog-filtro">{{ perro.edad }}</label>
-            </div><!--
-            <div id="dog-name" @click="goTo(perro.id)">
-                <label class="name">{{ perro.nombre }}</label>
-            </div>-->
+            </div>
             <button class="dog-name" id="dog-name" @click="goTo(perro.id)">
               <label class="name">{{ perro.nombre }}</label>
-              <div class="dog-prev">
-                <label class="masname">Mas Info</label>
-              </div>
+              <label class="masname">Ver Perfil</label>
             </button>
           </div>
         </div>
@@ -125,12 +116,6 @@ export default {
             tagE.push('gr')
           }
           this.perros.forEach(function(perro){
-            /*function dogsContainsFilter(filter){
-              return perro.tags.indexOf(filter) != -1;
-            }
-            if(tags.every(dogsContainsFilter)){
-              filtrarDogs.push(perro)
-            }*/
             if(tagV.length > 0 && tagS.length == 0 && tagE.length == 0){
               tagV.forEach(function(tag){
                 if(perro.tags.indexOf(tag) != -1){
@@ -220,7 +205,7 @@ export default {
   height: 470px;
 }
 .adopcion-container {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  /*font-family: 'Avenir', Helvetica, Arial, sans-serif;*/
   margin-left: 140px;
   margin-right: 140px;
   margin-bottom: 10px;
@@ -245,9 +230,11 @@ export default {
 #dog-container:hover .masname{
   opacity: 1;
 }
+#dog-container:hover .name{
+  opacity: 0;
+}
 #dog-name {
   display: flex;
-  align-self: baseline;
   background-color: #FC8945;
   border: none;
   border-radius: 10px;
@@ -264,30 +251,36 @@ export default {
 }
 #dog-prev {
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   border-radius: 10px;
   position: absolute;
   text-align: center;
-  width: 100%;
+  width: 200px;
   opacity: 0;
 }
 .dog-filtro{
-  font-family: Segoe UI;
+  /*font-family: Segoe UI;*/
   font-size: 17px;
 }
 .name {
-  font-family: Segoe UI;
-  font-size: 20px;
+  /*font-family: Segoe UI;*/
+  backface-visibility: hidden;
+  transition: .5s ease;
+  text-align: center;
+  font-size: 17px;
   color: white;
   margin: auto;
 }
 .masname {
-  font-family: Segoe UI;
-  font-size: 20px;
+  /*font-family: Segoe UI;*/
+  position: absolute;
+  font-size: 17px;
   color: white;
   margin: auto;
+  margin-left: 52px;
+  
   opacity: 0;
 }
 .doc{

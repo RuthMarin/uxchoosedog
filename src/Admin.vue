@@ -205,6 +205,7 @@ export default{
           sexo: this.perfil_perro.sexo,
           edad: edad,
           tags: tags,
+          estado: true,
           foto: "https://placedog.net/"+numero_imagen+"/280/503"
         }).then(function(response){
           console.log('Perrito guardado')
