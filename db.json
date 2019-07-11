@@ -3,24 +3,24 @@
     {
       "texto": "Hola me interesa adoptar el perrito",
       "id_perro": 1,
-      "respuesta": false,
+      "respuesta": true,
       "id": 1
     },
     {
       "texto": "Lo quiero",
-      "id_perro": 3,
-      "respuesta": false,
+      "id_perro": 1,
+      "respuesta": true,
       "id": 2
     },
     {
       "texto": "skjbdsa",
-      "id_perro": 5,
+      "id_perro": 1,
       "respuesta": true,
       "id": 4
     },
     {
       "texto": "asdasd",
-      "id_perro": 5,
+      "id_perro": 2,
       "respuesta": true,
       "id": 5
     }
@@ -37,7 +37,7 @@
         "c",
         "cch"
       ],
-      "estado": false,
+      "estado": true,
       "foto": "https://placedog.net/500/280/503",
       "id": 1
     },
@@ -52,7 +52,7 @@
         "t",
         "adt"
       ],
-      "estado": false,
+      "estado": true,
       "foto": "https://placedog.net/501/280/503",
       "id": 2
     },
@@ -67,7 +67,7 @@
         "d",
         "my"
       ],
-      "estado": false,
+      "estado": true,
       "foto": "https://placedog.net/502/280/503",
       "id": 3
     },

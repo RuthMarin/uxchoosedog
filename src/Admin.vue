@@ -203,13 +203,14 @@ export default{
         this.datos.estado = false;
         axios.put('http://localhost:3000/perfil/'+this.numero, this.datos)
       .then(response => {
+        axios.get('http://localhost:3000/perfil/').then((response)=>{
+        this.perro = response.data;
+      })
       })
       .catch(e => {
         this.errors.push(e)
       })
-      axios.get('http://localhost:3000/perfil/').then((response)=>{
-        this.perro = response.data;
-      })
+      
       })
     },
     postRespuesta(elemento) {
