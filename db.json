@@ -23,6 +23,12 @@
       "id_perro": 2,
       "respuesta": true,
       "id": 5
+    },
+    {
+      "texto": "lo quiero",
+      "id_perro": 3,
+      "respuesta": true,
+      "id": 6
     }
   ],
   "perfil": [

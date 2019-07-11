@@ -28,6 +28,7 @@
     <br>
     <div class="row"  >
       <div class="col-xs-6 col-md-6" style="background-color:#FC8945;margin-top: 20px; margin-bottom: 20px; align-items:center">
+        <h3 style="color:#F7F2C2 ; text-align: center" >Solicitudes de adopción</h3>
         <div class="card" v-for="(item, index) in solicitudes" :key="index" style="width: 100%;margin-top: 10 px; ">
           <div class="card-body">
             <h5 class="card-title">Solicitud de adopción</h5>
@@ -37,7 +38,7 @@
         </div>
       </div>
       <div class="col-xs-12 col-md-6" style="background-color:#F7F2C2 ; margin-top: 20px; margin-bottom: 20px;">
-        <h3>Formulario para dar en adopción</h3><img class= "imgk" src="./assets/perro.png">
+        <h3 style=" text-align: center">Formulario para dar en adopción</h3><img class= "imgk" src="./assets/perro.png">
         <div>
           <div>
             <div>

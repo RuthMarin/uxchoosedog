@@ -8,46 +8,41 @@
             <div class="w3-container">
                 <br>
               <img class= "img" :src=info.foto >
-  <h2>{{info.nombre}}</h2>
-  <p>{{info.descripcion}}</p>
-  <table class="table">
-    <tbody>
-      <tr>
-        <th scope="row">Sexo</th>
-        <td>{{info.sexo}}</td>
-      </tr>
-      <tr>
-        <th scope="row">Edad</th>
-        <td>{{info.edad}}</td>
-      </tr>
-      <tr>
-        <th scope="row">Vivienda</th>
-        <td>{{info.vivienda}}</td>
-      </tr>
-      <tr>
-        <th scope="row" >Adoptado</th>
-        <td v-if="info.estado === true">Disponible</td>
-        <td v-else> No disponible</td>
-
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+                <h2>{{info.nombre}}</h2>
+                <p>{{info.descripcion}}</p>
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <th scope="row">Sexo</th>
+                      <td>{{info.sexo}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Edad</th>
+                      <td>{{info.edad}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Vivienda</th>
+                      <td>{{info.vivienda}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" >Adoptado</th>
+                      <td v-if="info.estado === true">Disponible</td>
+                      <td v-else> No disponible</td>
+                    </tr>
+              </tbody>
+            </table>
+    </div>
         </div>
         <div class="col-sm-6" style="background-color:#F7F2C2 ;"><div class="row justify-content-center">
-
         <div class="col-md-8">
-  <br>
-<h2>¿Cómo adoptar?</h2>
-<ul class="a">
-  <li>Los perros son animales extraordinarios pero tienen una serie de necesidades que no puedes pasar por alto. Los paseos diarios, la rutina de cuidados, así como los tiempos de juego y la socialización con otros perros. Si ya has valorado todos estos aspectos y decides seguir adelante con la adopción.</li>
-  <li>Envian un mensaje para ponerte en contacto con el dueño temporal explicando por qué te gustaría adoptar a este perro</li>
-  <li>En el mensaje deja tu número de teléfono para que se pongan en contacto contigo</li>
-</ul>
-
+              <br>
+            <h2>¿Cómo adoptar?</h2>
+            <ul class="a">
+              <li>Los perros son animales extraordinarios pero tienen una serie de necesidades que no puedes pasar por alto. Los paseos diarios, la rutina de cuidados, así como los tiempos de juego y la socialización con otros perros. Si ya has valorado todos estos aspectos y decides seguir adelante con la adopción.</li>
+              <li>Envian un mensaje para ponerte en contacto con el dueño temporal explicando por qué te gustaría adoptar a este perro</li>
+              <li>En el mensaje deja tu número de teléfono para que se pongan en contacto contigo</li>
+            </ul>
             <div class="card">
-
                 <div class="card-body">
                     <form @submit="formSubmit">
                     <strong>Escribe tu solicitud:</strong>
@@ -55,21 +50,16 @@
                     <br/>
                     <button class="btn btn-success" >Enviar</button>
                     </form>
-
                 </div>
-
-
             </div>
-
+           </div>
+         </div>
+         <br>
         </div>
-    </div>
-    <br>
-  </div>
-      </div>
+       </div>
       <br>
     </div>
-
-<notifications group="mensaje" />
+  <notifications group="mensaje" />
   </div>
 
 </template>
@@ -128,20 +118,10 @@ Vue.use(VueAxios, axios)
             text: 'Debes llenar el campo'
           });
         }
-
     }
-
+  }
 }
-
-}
-
-
-
-
-
-
 </script>
-
 <style type="text/css">
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -152,11 +132,9 @@ Vue.use(VueAxios, axios)
     height: auto;
     align-items: center;
   }
-ul.a {list-style-type: circle;
-text-align: justify;}
-.container-fluid{
-  margin-top: 100 px;
-}
-
-
+  ul.a {list-style-type: circle;
+  text-align: justify;}
+  .container-fluid{
+    margin-top: 100 px;
+  }
 </style>
