@@ -10,17 +10,32 @@
     </div>
     <div class="col-sm-8">
       <div class="row">
+        <div class="col-md-8">
+          <label v-if="filtrarDogs.length === 0" style="margin-top: 20px" class="name" id="dog-name">No hay coincidencias para tu busqueda :(</label>
+        </div>
         <div class="col-md-4" v-for="(perro, index) in filtrarDogs" :key="index">
           <div id="dog-container">
+            <label v-if="perro.estado === true" class="dog-state" style="background-color:green">Adoptame</label>
+            <label v-else class="dog-state" style="background-color:red">Adoptado</label>
+            <!--
+            <button style = "background-color:green;"v-if="perro.estado === true" class="dog" id="dog-name" @click="goTo(perro.id)">
+              <label class="dog">Disponible</label>
+            </button>
+            <button  style = "background-color:red;"v-else class="dog-name" id="dog-name" @click="goTo(perro.id)">
+              <label class="dog-name">No disponible</label>
+            </button>-->
             <img class="dog-image" id="dog-image" v-bind:src="perro.foto">
             <div class="dog-prev" id="dog-prev">
-              <label class="dog-filtro">{{ perro.vivienda }}</label>
               <label class="dog-filtro">{{ perro.sexo }}</label>
               <label class="dog-filtro">{{ perro.edad }}</label>
+              <label class="dog-filtro">{{ perro.vivienda }}</label>
             </div>
-            <button class="dog-name" id="dog-name" @click="goTo(perro.id)">
+            <button v-if="perro.estado === true" class="dog-name" id="dog-name" @click="goTo(perro.id)">
               <label class="name">{{ perro.nombre }}</label>
               <label class="masname">Ver Perfil</label>
+            </button>
+            <button v-else disabled class="dog-name" id="dog-name" @click="goTo(perro.id)">
+              <label class="name">{{ perro.nombre }}</label>
             </button>
           </div>
         </div>
@@ -62,6 +77,7 @@ export default {
     Vue.axios.get('http://localhost:3000/perfil').then((response) => {
         console.log(response.data)
         this.perros = response.data
+        console.log(this.perros)
     })
   },
   methods: {
@@ -85,11 +101,18 @@ export default {
           var tagV = []
           var tagS = []
           var tagE = []
-          if(this.filtros.depa === true){
+          if(this.filtros.depa === true && this.filtros.casa === true){
             tagV.push('d')
-          }
-          if(this.filtros.casa === true){
             tagV.push('c')
+            tagV.push('t')
+          }
+          if(this.filtros.depa === true && this.filtros.casa === false){
+            tagV.push('d')
+            tagV.push('t')
+          }
+          if(this.filtros.depa === false && this.filtros.casa === true){
+            tagV.push('c')
+            tagV.push('t')
           }
           if(this.filtros.mch === true){
             tagS.push('m')
@@ -197,14 +220,10 @@ export default {
   border: 3px black solid;
   grid-column-start: 1;
   grid-column-end: 13;
-  height: 150px;
-}
-.select-perro {
-  border: 1px black solid;
-  margin-top: 20px;
-  height: 470px;
+  height: 200px;
 }
 .adopcion-container {
+  border-radius: 5px 10px 10px 10px;
   /*font-family: 'Avenir', Helvetica, Arial, sans-serif;*/
   margin-left: 140px;
   margin-right: 140px;
@@ -213,13 +232,12 @@ export default {
 #dog-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; 
+  align-items: flex-start;
   background-color: #F8DAA6;
   border: 1px black solid;
-  border-radius: 10px;
+  border-radius: 5px 10px 10px 10px;
   margin-top: 20px;
-  height: 160px;
-  width: 200px;
+  width: 210px;
 }
 #dog-container:hover .dog-image{
   opacity: 0.3;
@@ -235,6 +253,7 @@ export default {
 }
 #dog-name {
   display: flex;
+  justify-content: center;
   background-color: #FC8945;
   border: none;
   border-radius: 10px;
@@ -242,7 +261,9 @@ export default {
   width: 100%;
   margin-top: 9px;
 }
+
 #dog-image {
+  border-radius: 5px 10px 10px 10px;
   backface-visibility: hidden;
   transition: .5s ease;
   border-radius: 10px;
@@ -257,8 +278,16 @@ export default {
   border-radius: 10px;
   position: absolute;
   text-align: center;
+  margin-top: 22px;
   width: 200px;
   opacity: 0;
+}
+.dog-state{
+  position: absolute;
+  border-radius: 5px 30px 50px 15px;
+  width: 85px;
+  color: white;
+  opacity: 1;
 }
 .dog-filtro{
   /*font-family: Segoe UI;*/
@@ -279,8 +308,6 @@ export default {
   font-size: 17px;
   color: white;
   margin: auto;
-  margin-left: 52px;
-  
   opacity: 0;
 }
 .doc{
@@ -296,6 +323,15 @@ export default {
 }
 .box img{
   width: 100%;
-  height: auto;
 }
+.label {
+  color: white;
+  padding: 8px;
+  font-family: Arial;
+}
+.success {background-color: #4CAF50;} /* Green */
+.info {background-color: #2196F3;} /* Blue */
+.warning {background-color: #ff9800;} /* Orange */
+.danger {background-color: #f44336;} /* Red */
+.other {background-color: #e7e7e7; color: black;} /* Gray */
 </style>
