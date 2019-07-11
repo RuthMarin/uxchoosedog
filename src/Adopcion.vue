@@ -16,6 +16,12 @@
       <div class="row">
         <div class="col-md-4" v-for="(perro, index) in filtrarDogs" :key="index">
           <div id="dog-container">
+            <button style = "background-color:green;"v-if="perro.estado === true" class="dog" id="dog-name" @click="goTo(perro.id)">
+              <label class="dog">Disponible</label>
+            </button>
+            <button  style = "background-color:red;"v-else class="dog-name" id="dog-name" @click="goTo(perro.id)">
+              <label class="dog-name">No disponible</label>
+            </button>
             <img class="dog-image" id="dog-image" v-bind:src="perro.foto">
             <div class="dog-prev" id="dog-prev">
               <label class="dog-filtro">{{ perro.vivienda }}</label>
@@ -25,12 +31,11 @@
             <div id="dog-name" @click="goTo(perro.id)">
                 <label class="name">{{ perro.nombre }}</label>
             </div>-->
+
             <button class="dog-name" id="dog-name" @click="goTo(perro.id)">
-              <label class="name">{{ perro.nombre }}</label>
-              <div class="dog-prev">
-                <label class="masname">Mas Info</label>
-              </div>
+              <label class="dog-name">{{ perro.nombre }}</label>
             </button>
+
           </div>
         </div>
       </div>
@@ -212,7 +217,7 @@ export default {
   border: 3px black solid;
   grid-column-start: 1;
   grid-column-end: 13;
-  height: 150px;
+  height: 200px;
 }
 .select-perro {
   border: 1px black solid;
@@ -228,13 +233,13 @@ export default {
 #dog-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; 
+  align-items: flex-start;
   background-color: #F8DAA6;
   border: 1px black solid;
   border-radius: 10px;
   margin-top: 20px;
-  height: 160px;
-  width: 200px;
+  height: 210px;
+  width: 210px;
 }
 #dog-container:hover .dog-image{
   opacity: 0.3;
@@ -255,6 +260,7 @@ export default {
   width: 100%;
   margin-top: 9px;
 }
+
 #dog-image {
   backface-visibility: hidden;
   transition: .5s ease;
@@ -271,6 +277,8 @@ export default {
   position: absolute;
   text-align: center;
   width: 100%;
+
+
   opacity: 0;
 }
 .dog-filtro{
@@ -305,4 +313,14 @@ export default {
   width: 100%;
   height: auto;
 }
+.label {
+  color: white;
+  padding: 8px;
+  font-family: Arial;
+}
+.success {background-color: #4CAF50;} /* Green */
+.info {background-color: #2196F3;} /* Blue */
+.warning {background-color: #ff9800;} /* Orange */
+.danger {background-color: #f44336;} /* Red */
+.other {background-color: #e7e7e7; color: black;} /* Gray */
 </style>

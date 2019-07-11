@@ -422,7 +422,7 @@
         "c",
         "d"
       ],
-      "estado": true,
+      "estado": false,
       "foto": "https://placedog.net/509/280/503",
       "id": 25
     },
@@ -435,7 +435,7 @@
         "c",
         "d"
       ],
-      "estado": true,
+      "estado": false,
       "foto": "https://placedog.net/510/280/503",
       "id": 26
     },
@@ -448,7 +448,7 @@
         "c",
         "d"
       ],
-      "estado": true,
+      "estado": false,
       "foto": "https://placedog.net/511/280/503",
       "id": 27
     },
